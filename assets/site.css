@@ -106,6 +106,7 @@ button{background:none;border:0;cursor:pointer}
 .scene{position:relative;overflow:hidden;background:#D8D2CB}
 .ph{display:block;width:100%;height:100%;object-fit:cover}
 .scene .ph{position:absolute;inset:0;object-position:45% 30%;animation:settle 2.4s var(--ease) both}
+.scene video.ph{scale:1.14;transform-origin:50% 100%}
 @keyframes settle{from{transform:scale(1.06);opacity:.4}to{transform:none;opacity:1}}
 .scene-tag .th{width:56px;height:56px;flex:none;background:#F2EEEA url("https://images.squarespace-cdn.com/content/v1/5aaa54da7e3c3a3945339df2/59072c00-dde6-478d-a98f-91e84e65182b/Duo+with+shadow.jpg?format=300w") center/cover}
 .scene-tag .go{font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid;margin-left:8px}
