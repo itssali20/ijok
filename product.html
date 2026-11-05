@@ -49,6 +49,47 @@
 .acc summary::after{content:"+";font-size:20px;font-weight:300;letter-spacing:0}
 .acc details[open] summary::after{content:"\2212"}
 .acc p{padding:0 0 22px;color:var(--ink-2);font-size:15px;line-height:1.75;max-width:56ch}
+.pdp-rt{font-size:14px;margin:0 0 18px}
+.pdp-rt .rstars{font-size:17px}
+/* Reviews */
+.rev{padding:clamp(56px,6vw,88px) var(--g);border-top:1px solid var(--line);scroll-margin-top:90px}
+.rev .h2{margin-bottom:34px}
+.rev-in{display:grid;grid-template-columns:minmax(260px,.8fr) 2fr;gap:clamp(32px,5vw,88px);align-items:start}
+.rev-big{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+.rev-big b{font-family:var(--serif);font-weight:300;font-size:56px;line-height:1}
+.rev-big .rstars{font-size:20px}
+#rCount{font-size:14px;color:var(--ink-2);margin-bottom:20px}
+.bar{display:grid;grid-template-columns:48px 1fr 40px;gap:12px;align-items:center;font-size:13px;color:var(--ink-2);margin:8px 0}
+.bar span:last-child{text-align:right}
+.bar-t{height:8px;background:var(--tile);overflow:hidden}
+.bar-t span{display:block;height:100%;background:#C98A2B}
+.rev-sum .btn{width:100%;margin-top:26px}
+.rev-form{background:var(--white);border:1px solid var(--line-2);padding:clamp(20px,3vw,32px);display:grid;gap:22px;margin-bottom:34px}
+.rev-form[hidden]{display:none}
+.rev-form h3{font-family:var(--serif);font-weight:300;font-size:26px}
+.rev-form fieldset{border:0;padding:0;margin:0;display:grid;gap:8px}
+.rev-form legend{padding:0;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.rate-pick{--star:#C98A2B;position:relative;display:inline-flex;flex-direction:row-reverse;justify-content:flex-end;width:max-content}
+.rate-pick input{position:absolute;opacity:0;width:1px;height:1px}
+.rate-pick label{padding:2px;cursor:pointer;line-height:0}
+.rate-pick svg{width:36px;height:36px;fill:none;stroke:var(--star);stroke-width:1.4;stroke-linejoin:round;transition:fill .15s}
+.rate-pick input:checked~label svg,.rate-pick label:hover svg,.rate-pick label:hover~label svg{fill:var(--star)}
+.rate-pick input:focus-visible+label{outline:2px solid var(--charcoal);outline-offset:2px}
+.rev-form .fld textarea{min-height:130px}
+.rev-err{color:var(--red);font-size:14px}
+.rev-err[hidden],.rev-thanks[hidden]{display:none}
+.rev-thanks{padding:16px 20px;background:var(--white);border:1px solid var(--line-2);color:#3f6b4b;font-size:15px;margin-bottom:26px}
+.rev-act{display:flex;gap:12px;flex-wrap:wrap}
+.rev-act .btn{width:auto}
+.rvw{padding:26px 0;border-top:1px solid var(--line)}
+.rvw:first-child{border-top:0;padding-top:0}
+.rv-h{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px}
+.rv-n{font-weight:600;font-size:15px}
+.rv-d{font-size:13px;color:var(--ink-3)}
+.rv-t{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.rv-t b{font-weight:600}
+.rvw p{color:var(--ink-2);font-size:15px;line-height:1.7;max-width:64ch;white-space:pre-line;margin-bottom:8px}
+.rv-none{color:var(--ink-3);font-size:15px}
 .pdp-more{padding:clamp(64px,7vw,104px) 0;border-top:1px solid var(--line)}
 .pdp-more .rail{grid-auto-columns:calc((100% - 2*20px)/3)}
 .pdp-bar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--white);border-top:1px solid var(--line);padding:10px var(--g);display:none;align-items:center;justify-content:space-between;gap:14px;transform:translateY(100%);transition:transform .4s var(--ease)}
@@ -57,6 +98,7 @@
 .pdp-bar .btn{height:46px;padding:0 22px;flex:none}
 @media (max-width:900px){
   .pdp-in{grid-template-columns:1fr}
+  .rev-in{grid-template-columns:1fr}
   .pdp-vis{position:relative;top:0;aspect-ratio:1/1}
   .pdp-more .rail{grid-auto-columns:62%}
   .pdp-bar{display:flex}
@@ -110,6 +152,7 @@
       <p class="cap" id="pCat"></p>
       <h1 class="h2" id="pName"></h1>
       <p class="pdp-sub" id="pSub"></p>
+      <a class="rt pdp-rt" id="pRate" href="#reviews"></a>
       <div class="pdp-price"><span id="pPrice"></span><s id="pWas"></s><em id="pSave"></em></div>
       <p class="lede" id="pDesc"></p>
 
@@ -133,6 +176,40 @@
         <details open><summary>About this product</summary><p id="aAbout"></p></details>
         <details><summary>How to use</summary><p id="aUse"></p></details>
         <details><summary>Shipping &amp; returns</summary><p>Complimentary shipping across Australia on orders over A$80. Orders are discounted before shipping is calculated. See our shipping and returns page for full details.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap rev" id="reviews" aria-labelledby="revT">
+    <h2 class="h2" id="revT">Customer reviews</h2>
+    <div class="rev-in">
+      <aside class="rev-sum">
+        <div class="rev-big"><b id="rAvg">–</b><span id="rStars"></span></div>
+        <p id="rCount"></p>
+        <div id="rBars"></div>
+        <button class="btn btn-ghost" id="rWrite" type="button" aria-expanded="false" aria-controls="rForm">Write a review</button>
+      </aside>
+      <div>
+        <p class="rev-thanks" id="rThanks" role="status" hidden>Thank you, your review has been added.</p>
+        <form class="rev-form" id="rForm" novalidate hidden>
+          <h3>How was the item?</h3>
+          <fieldset>
+            <legend>Overall rating</legend>
+            <div class="rate-pick">
+              <input type="radio" name="rate" id="r5" value="5" aria-label="5 stars"><label for="r5" title="5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17.4l-5.9 3.3 1.3-6.6L2.5 9.5l6.7-.8z"/></svg></label>
+              <input type="radio" name="rate" id="r4" value="4" aria-label="4 stars"><label for="r4" title="4 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17.4l-5.9 3.3 1.3-6.6L2.5 9.5l6.7-.8z"/></svg></label>
+              <input type="radio" name="rate" id="r3" value="3" aria-label="3 stars"><label for="r3" title="3 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17.4l-5.9 3.3 1.3-6.6L2.5 9.5l6.7-.8z"/></svg></label>
+              <input type="radio" name="rate" id="r2" value="2" aria-label="2 stars"><label for="r2" title="2 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17.4l-5.9 3.3 1.3-6.6L2.5 9.5l6.7-.8z"/></svg></label>
+              <input type="radio" name="rate" id="r1" value="1" aria-label="1 star"><label for="r1" title="1 star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17.4l-5.9 3.3 1.3-6.6L2.5 9.5l6.7-.8z"/></svg></label>
+            </div>
+          </fieldset>
+          <div class="fld"><label for="rTitle">Title your review (required)</label><input id="rTitle" maxlength="100" autocomplete="off" placeholder="What matters most?"></div>
+          <div class="fld"><label for="rBody">Write a review (required)</label><textarea id="rBody" maxlength="2000" placeholder="What should other customers know?"></textarea></div>
+          <div class="fld"><label for="rName">Your name (optional)</label><input id="rName" maxlength="40" autocomplete="given-name" placeholder="Shown with your review"></div>
+          <p class="rev-err" id="rErr" role="alert" hidden></p>
+          <div class="rev-act"><button class="btn btn-dark" type="submit">Submit</button><button class="btn btn-ghost" type="button" id="rCancel">Cancel</button></div>
+        </form>
+        <div id="rList"></div>
       </div>
     </div>
   </section>
@@ -213,7 +290,7 @@ const id=(new URLSearchParams(location.search).get('p')||'men');
 const x=P[id];
 if(!x){
   document.getElementById('pdp').innerHTML='<div style="grid-column:1/-1;padding:80px 0;text-align:center"><h1 class="h2">We couldn\u2019t find that product</h1><p class="lede" style="margin:18px auto 28px">It may have moved. Browse our bestsellers instead.</p><a class="btn btn-dark" href="shop.html?c=bestsellers">Shop bestsellers</a></div>';
-  document.getElementById('pBar').remove();document.querySelector('.pdp-more').remove();
+  document.getElementById('pBar').remove();document.getElementById('reviews').remove();document.querySelector('.pdp-more').remove();
 }else{
   const $=i=>document.getElementById(i);let q=1;
   document.title=x.n+' | ljörk';
@@ -252,6 +329,30 @@ if(!x){
   new IntersectionObserver(([e])=>bar.classList.toggle('on',!e.isIntersecting&&e.boundingClientRect.top<0)).observe($('pAdd'));
   const rel=MORE[id]||['men','q10','collagel','faceneck','pepteyes'].filter(k=>k!==id).slice(0,3);
   $('rail-more').innerHTML=rel.map(card).join('');
+
+  /* ----- Ratings & reviews ----- */
+  const form=$('rForm'),err=$('rErr'),fmtD=d=>new Date(d).toLocaleDateString('en-AU',{day:'numeric',month:'long',year:'numeric'});
+  function renderReviews(){
+    const {n,avg}=rating(id),r=revs(id).slice().sort((a,b)=>b.d-a.d);
+    $('pRate').innerHTML=stars(avg)+`<span>${n?`${avg.toFixed(1)} <i>(${n} review${n>1?'s':''})</i>`:'No reviews yet'}</span>`;
+    $('rAvg').textContent=n?avg.toFixed(1):'–';$('rStars').innerHTML=stars(avg);
+    $('rCount').textContent=n?`${n} rating${n>1?'s':''}`:'No reviews yet. Be the first to share your experience.';
+    $('rBars').innerHTML=[5,4,3,2,1].map(k=>{const p=n?Math.round(r.filter(v=>v.s===k).length/n*100):0;return `<div class="bar"><span>${k} star</span><span class="bar-t"><span style="width:${p}%"></span></span><span>${p}%</span></div>`}).join('');
+    $('rList').innerHTML=r.length?r.map(v=>`<article class="rvw"><div class="rv-h"><span class="rv-n">${esc(v.n||'ljörk customer')}</span><span class="rv-d">${fmtD(v.d)}</span></div><div class="rv-t">${stars(v.s)}<b>${esc(v.t)}</b></div>${v.b?`<p>${esc(v.b)}</p>`:''}<button class="ulink" type="button" data-del="${v.d}">Delete</button></article>`).join(''):'<p class="rv-none">Nobody has reviewed this product yet.</p>';
+  }
+  function toggleForm(open){form.hidden=!open;$('rWrite').textContent=open?'Close':'Write a review';$('rWrite').setAttribute('aria-expanded',open);$('rThanks').hidden=true;err.hidden=true;if(open){form.scrollIntoView({behavior:'smooth',block:'nearest'});$('r5').focus({preventScroll:true})}}
+  $('rWrite').onclick=()=>toggleForm(form.hidden);
+  $('rCancel').onclick=()=>{toggleForm(false);$('rWrite').focus()};
+  form.onsubmit=e=>{
+    e.preventDefault();
+    const s=+form.rate.value,t=$('rTitle').value.trim(),b=$('rBody').value.trim(),nm=$('rName').value.trim();
+    const msg=!s?'Please choose a star rating.':!t?'Please add a title for your review.':!b?'Please write your review.':'';
+    if(msg){err.textContent=msg;err.hidden=false;return}
+    (REV[id]=revs(id)).push({s,t,b,n:nm,d:Date.now()});saveRev();
+    form.reset();toggleForm(false);renderReviews();$('rThanks').hidden=false;
+  };
+  $('rList').onclick=e=>{const b=e.target.closest('[data-del]');if(!b)return;REV[id]=revs(id).filter(v=>String(v.d)!==b.dataset.del);saveRev();renderReviews()};
+  renderReviews();
 }
 </script>
 </body>

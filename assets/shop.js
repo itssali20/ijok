@@ -59,11 +59,20 @@ const P={
 };
 const fmt=n=>'A$'+n.toFixed(2);
 const pkOf=x=>pk(x.t,x.c,x.l,x.s,x.z||'');
+/* ===== Ratings & reviews. Saved in this browser (localStorage). To share reviews between visitors, point load/save at a backend or review app. ===== */
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const STAR=`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17.4l-5.9 3.3 1.3-6.6L2.5 9.5l6.7-.8z"/></svg>`;
+const stars=v=>`<span class="rstars" role="img" aria-label="${v?v.toFixed(1):'No'} out of 5 stars"><span class="st-bg">${STAR.repeat(5)}</span><span class="st-fg" style="width:${v/5*100}%">${STAR.repeat(5)}</span></span>`;
+let REV={};try{REV=JSON.parse(localStorage.getItem('ljork-reviews'))||{}}catch(e){}
+const revs=id=>REV[id]||[];
+const saveRev=()=>{try{localStorage.setItem('ljork-reviews',JSON.stringify(REV))}catch(e){}};
+function rating(id){const r=revs(id),n=r.length;return {n,avg:n?r.reduce((a,v)=>a+v.s,0)/n:0}}
+function ratingLine(id){const {n,avg}=rating(id);return `<a class="rt" href="product.html?p=${id}#reviews">${stars(avg)}<span>${n?`${avg.toFixed(1)} <i>(${n})</i>`:'No reviews yet'}</span></a>`}
 function card(id){const x=P[id];return `<article class="card">
   <div class="card-img">${x.b?`<span class="badge${x.b.startsWith('Save')?' red':''}">${x.b}</span>`:''}${x.sold?'<span class="badge">Back soon</span>':''}<a class="pk" href="product.html?p=${id}" aria-label="${x.n}" tabindex="-1">${pkOf(x)}</a>
   ${x.sold?'<button class="qa" disabled>Notify me when back</button>':`<button class="qa" data-add="${id}">Quick add, ${fmt(x.p)}</button>`}</div>
   <div class="card-b"><div class="card-top"><a class="card-name" href="product.html?p=${id}">${x.n}</a><span class="price">${fmt(x.p)}${x.o?`<s>${fmt(x.o)}</s>`:''}</span></div>
-  <p class="card-d">${x.d}</p>${x.m?`<p class="card-m">${x.m}</p>`:''}</div></article>`}
+  ${ratingLine(id)}<p class="card-d">${x.d}</p>${x.m?`<p class="card-m">${x.m}</p>`:''}</div></article>`}
 /* ===== Announcement ===== */
 const MSG=['Buy more, save more: 10% off every additional product','Complimentary shipping across Australia on orders over A$80','Pay in 4 interest-free instalments with Afterpay','<a href="index.html#join">Join the ljörk list for 10% off your first order</a>'];let ai=0;
 function ann(d){ai=(ai+d+MSG.length)%MSG.length;const m=document.getElementById('annMsg');m.style.opacity=0;setTimeout(()=>{m.innerHTML=MSG[ai];m.style.opacity=1},250)}
