@@ -44,21 +44,21 @@ function pk(type,c,label,sub='',size=''){
 }
 
 /* ===== Catalogue (real ljork.com names & prices) ===== */
+const IMGB=(window.LJ_BASE||'https://cdn.jsdelivr.net/gh/itssali20/ijok@main/')+'assets/p/';
+const IMGN={collagel: 12, pepteyes: 7, q10: 8, faceneck: 7, men: 7, sanszit: 6, scar: 5};
 const P={
   collagel:{n:'Collagel',d:'Age-defying gel for visible firmness and deep hydration',m:'50 mL',p:49.95,o:104.95,t:'airless',c:'white',l:'Collagel',s:'Ultimate anti-aging gel',z:'50 mL'},
   pepteyes:{n:'Pepteyes',d:'Eye cream for wrinkles, dark circles and under-eye bags',m:'30 mL',p:34.95,o:95.99,t:'airless-s',c:'white',l:'Pepteyes',s:'Rejuvenating eye cream',z:'30 mL'},
-  duo:{n:'Anti-ageing Duo',d:'Collagel and Pepteyes together',m:'50 mL + 30 mL',p:70.95,o:149.95,t:'airless',c:'white',l:'Duo',s:'Collagel + Pepteyes',b:'Save A$79',nd:1},
-  q10:{n:'Q10 Facial Oil',d:'Beauty in a bottle. A nourishing face oil with coenzyme Q10',p:35.95,o:45.95,t:'dropper',c:'bronze',l:'Q10',s:'Facial oil',b:'Most loved'},
-  faceneck:{n:'Face & Neck Cream',d:'Anti-ageing, moisturising cream for face and neck',p:39.95,o:49.95,t:'jar',c:'burg',l:'Face & Neck',s:'Moisturising cream'},
-  men:{n:'Moisturiser for Men',d:'Advanced anti-ageing moisturiser, tailored for men\'s skin',p:34.95,o:49.95,t:'tube',c:'burg',l:'For men',s:'Anti-ageing moisturiser',b:'Best seller'},
-  sanszit:{n:'SansZit Moisturiser',d:'Lightweight moisturiser for acne-prone skin',p:19.99,o:42,t:'tube',c:'sage',l:'SansZit',s:'Moisturiser'},
-  scar:{n:'Scar Corrector Serum',d:'Helps fade post-acne dark spots',p:24.95,t:'dropper',c:'sage',l:'Scar',s:'Corrector serum'},
-  kloid:{n:'K-loid Scar Cream',d:'Moisturising cream for raised and textured scars',p:39.95,o:42,t:'jar',c:'sagejar',l:'K-loid',s:'Scar cream'},
-  bar:{n:'SansZit Bar',d:'Anti-acne cleansing bar',p:15,t:'bar',c:'sage',l:'SansZit',s:'Cleansing bar',sold:1},
-  eraser:{n:'SansZit Blemish Eraser',d:'Targeted spot treatment',p:14,t:'tube',c:'sage',l:'Eraser',s:'Spot treatment',sold:1}
+  q10:{n:'Q10 Facial Oil',d:'Beauty in a bottle. A nourishing face oil with coenzyme Q10, rosehip, vitamin C and squalane',m:'30 mL',p:35.95,o:45.95,t:'dropper',c:'bronze',l:'Q10',s:'Nourishing face oil',b:'Most loved'},
+  faceneck:{n:'Anti-Ageing Moisturising Cream',d:'Deep anti-ageing moisturiser with niacinamide, squalane, hyaluronic acid and vitamins C, A and E',m:'50 g',p:39.95,o:49.95,t:'jar',c:'burg',l:'Anti-ageing',s:'Moisturising cream'},
+  men:{n:'Moisturiser for Men',d:'Advanced anti-ageing moisturising cream with vitamins C, A and E, tailored for men\'s skin',m:'50 g',p:34.95,o:49.95,t:'tube',c:'burg',l:'For men',s:'Anti-ageing moisturiser',b:'Best seller'},
+  sanszit:{n:'SansZit Anti-Acne Cream',d:'Moisturising anti-acne cream that reduces blemishes, controls sebum and helps prevent scars',m:'25 mL',p:19.99,o:42,t:'tube',c:'sage',l:'SansZit',s:'Anti-acne moisturiser'},
+  scar:{n:'Scar Corrector Serum',d:'Skin-brightening serum that helps fade post-acne dark spots and evens skin tone',m:'30 mL',p:24.95,t:'dropper',c:'sage',l:'Scar',s:'Corrector serum'}
 };
+Object.keys(IMGN).forEach(k=>{P[k].i=Array.from({length:IMGN[k]},(_,n)=>IMGB+k+'-'+(n+1)+'.webp')});
+(function(){var st=document.createElement('style');st.textContent='.pk:has(>img.pph){inset:0!important}img.pph{width:100%;height:100%;object-fit:contain;display:block}.card-img:has(img.pph),.card:hover .card-img:has(img.pph),.th:has(img.pph),.step-img:has(img.pph){background:#fff}.spot-vis img.pph{object-fit:cover}.spot-vis:has(img.pph) .light{display:none}';document.head.appendChild(st)})();
 const fmt=n=>'A$'+n.toFixed(2);
-const pkOf=x=>pk(x.t,x.c,x.l,x.s,x.z||'');
+const pkOf=x=>x.i?`<img class="pph" src="${x.i[0]}" alt="${x.n}" loading="lazy">`:pk(x.t,x.c,x.l,x.s,x.z||'');
 /* ===== Ratings & reviews. Saved in this browser (localStorage). To share reviews between visitors, point load/save at a backend or review app. ===== */
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const STAR=`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17.4l-5.9 3.3 1.3-6.6L2.5 9.5l6.7-.8z"/></svg>`;
@@ -89,6 +89,7 @@ addEventListener('keydown',e=>{if(e.key==='Escape')closeAll()});
 
 /* ===== Bag ===== */
 let bag={};try{bag=JSON.parse(localStorage.getItem('ljork-bag'))||{}}catch(e){}
+Object.keys(bag).forEach(k=>{if(!P[k])delete bag[k]});
 Object.keys(bag).forEach(k=>{if(!P[k]||!(bag[k]>0))delete bag[k]});
 const FREE=80,DISC=.1;
 /* Buy more, save more: highest-priced unit pays full price, every additional unit is 10% off. Bundles (nd) are already discounted and excluded. Shipping threshold uses the discounted total. */
@@ -109,7 +110,7 @@ function renderBag(){
 }
 function openCart(){openM('cart');veil.classList.add('on')}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-add]');if(b){add(b.dataset.add);openCart();}
-  const s=e.target.closest('[data-add-set]');if(s){(s.dataset.addSet==='am'?['bar','collagel','pepteyes','faceneck']:['bar','scar','pepteyes','q10']).filter(i=>!P[i].sold).forEach(i=>add(i));openCart();}});
+  const s=e.target.closest('[data-add-set]');if(s){(s.dataset.addSet==='am'?['collagel','pepteyes','faceneck']:['scar','pepteyes','q10']).filter(i=>!P[i].sold).forEach(i=>add(i));openCart();}});
 renderBag();
 
 
@@ -120,20 +121,19 @@ P.pepteyes.u='Tap a little along the orbital bone, morning and night.';
 P.q10.u='Press three drops into clean skin in the evening.';
 P.scar.u='Apply to dark marks only.';
 const COLL={
-  all:{t:'All products',d:'The full ljörk range, formulated by a clinical immunologist.',ids:['men','q10','collagel','faceneck','pepteyes','duo','sanszit','scar','kloid','bar','eraser']},
-  bestsellers:{t:'Bestsellers',d:'The formulas customers come back for, led by Moisturiser for Men and Q10 Facial Oil.',ids:['men','q10','collagel','faceneck','pepteyes','duo']},
-  'anti-ageing':{t:'Anti-ageing',d:'Firm, smooth and hydrate. Formulas that support skin\u2019s own repair, for visible results with daily use.',ids:['men','collagel','pepteyes','faceneck','q10','duo']},
+  all:{t:'All products',d:'The full ljörk range, formulated by a clinical immunologist.',ids:['men','q10','collagel','faceneck','pepteyes','sanszit','scar']},
+  bestsellers:{t:'Bestsellers',d:'The formulas customers come back for, led by Moisturiser for Men and Q10 Facial Oil.',ids:['men','q10','collagel','faceneck','pepteyes']},
+  'anti-ageing':{t:'Anti-ageing',d:'Firm, smooth and hydrate. Formulas that support skin\u2019s own repair, for visible results with daily use.',ids:['men','collagel','pepteyes','faceneck','q10']},
   hydration:{t:'Hydration',d:'Moisturisers and oils that nourish and keep skin comfortable.',ids:['q10','faceneck','men','collagel','sanszit']},
-  acne:{t:'Acne & blemish',d:'Calm breakouts, then fade the marks they leave. Gentle enough for daily use on acne-prone skin.',ids:['sanszit','scar','kloid','bar','eraser']},
-  hair:{t:'Hair',d:'Our hair range is on its way.',ids:[]},
-  sets:{t:'Sets & duos',d:'Complete routines at our best price.',ids:['duo']}
+  acne:{t:'Acne & blemish',d:'Calm breakouts, then fade the marks they leave. Gentle enough for daily use on acne-prone skin.',ids:['sanszit','scar']},
+  hair:{t:'Hair',d:'Our hair range is on its way.',ids:[]}
 };
 const CONC={
-  lines:{t:'Fine lines & wrinkles',d:'Collagel and Face & Neck Cream for visible firmness and smoother-looking skin.',ids:['collagel','faceneck','duo','men']},
-  eyes:{t:'Dark circles & puffiness',d:'Pepteyes for the delicate eye area.',ids:['pepteyes','duo']},
+  lines:{t:'Fine lines & wrinkles',d:'Collagel and Anti-Ageing Moisturising Cream for visible firmness and smoother-looking skin.',ids:['collagel','faceneck','men']},
+  eyes:{t:'Dark circles & puffiness',d:'Pepteyes for the delicate eye area.',ids:['pepteyes']},
   dry:{t:'Dryness & dullness',d:'Nourishing oils and creams for skin that feels tight or looks flat.',ids:['q10','faceneck','collagel']},
-  breakouts:{t:'Breakouts',d:'The SansZit range for acne-prone skin.',ids:['sanszit','bar','eraser']},
-  marks:{t:'Acne marks & scars',d:'Scar Corrector Serum and K-loid Scar Cream.',ids:['scar','kloid']},
+  breakouts:{t:'Breakouts',d:'SansZit Anti-Acne Cream for acne-prone skin.',ids:['sanszit']},
+  marks:{t:'Acne marks & scars',d:'Scar Corrector Serum to fade post-acne dark spots.',ids:['scar']},
   hair:{t:'Thinning hair',d:'Our hair range is on its way.',ids:[]}
 };
 
