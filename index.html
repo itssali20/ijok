@@ -61,23 +61,23 @@
 <!-- SQS: Section 1, full-bleed, Fluid Engine 2 cols (no padding). Left: Text + Buttons. Right: Image block (model portrait, focal point on face). Duo card = small Image + Text block layered on top. -->
 <section class="hero" data-sqs="hero">
   <div class="hero-copy">
-    <p class="cap">Doctor-designed skincare</p>
-    <h1 class="h1">Health sustains beauty.</h1>
-    <p class="lede">Formulated by a clinical immunologist to restore what pollution, UV stress and time take from your skin.</p>
+    <p data-ed="Hero | Label" class="cap">Doctor-designed skincare</p>
+    <h1 data-ed="Hero | Heading" class="h1">Health sustains beauty.</h1>
+    <p data-ed="Hero | Text 1" class="lede">Formulated by a clinical immunologist to restore what pollution, UV stress and time take from your skin.</p>
     <div class="ctas">
-      <a class="btn btn-dark" href="shop.html?c=bestsellers">Shop bestsellers</a>
-      <button class="btn btn-ghost" onclick="openQuiz()">Find your routine</button>
+      <a data-ed="Hero | Button 1" class="btn btn-dark" href="shop.html?c=bestsellers">Shop bestsellers</a>
+      <button data-ed="Hero | Button 2" class="btn btn-ghost" onclick="openQuiz()">Find your routine</button>
     </div>
   </div>
   <div class="scene">
     <!-- SQS: Video block (Background Video / upload MP4). Poster = the previous still, so the hero never shows empty while the file loads or if it fails. -->
-    <video class="ph" id="heroVid" style="scale:1;object-position:50% 50%" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.webp" aria-label="ljörk skincare products in soft natural light">
+    <video data-ed-img="Hero | Image" data-ed-vid="Hero | Video link" class="ph" id="heroVid" style="scale:1;object-position:50% 50%" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.webp" aria-label="ljörk skincare products in soft natural light">
       <source src="assets/hero-v4.mp4" type="video/mp4">
     </video>
     <button class="vid-toggle" id="vidToggle" type="button" aria-label="Pause background video" aria-pressed="false"><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg><svg class="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg></button>
     <div class="scene-tag" aria-label="Our two best-selling products">
-      <a href="product.html?p=men"><span class="th"><div class="pk" data-pk="tube" data-c="burg" data-label="For men" data-id="men" data-sub="Anti-ageing moisturiser"></div></span><div><strong>Moisturiser for Men</strong>Best seller, A$34.95</div></a>
-      <a href="product.html?p=q10"><span class="th"><div class="pk" data-pk="dropper" data-c="bronze" data-label="Q10" data-id="q10" data-sub="Facial oil"></div></span><div><strong>Q10 Facial Oil</strong>Most loved oil, A$35.95</div></a>
+      <a href="product.html?p=men"><span class="th"><div class="pk" data-pk="tube" data-c="burg" data-label="For men" data-id="men" data-sub="Anti-ageing moisturiser"></div></span><div data-ed="Hero | Text 2"><strong>Moisturiser for Men</strong>Best seller, A$34.95</div></a>
+      <a href="product.html?p=q10"><span class="th"><div class="pk" data-pk="dropper" data-c="bronze" data-label="Q10" data-id="q10" data-sub="Facial oil"></div></span><div data-ed="Hero | Text 3"><strong>Q10 Facial Oil</strong>Most loved oil, A$35.95</div></a>
     </div>
   </div>
 </section>
@@ -85,10 +85,10 @@
 <!-- SQS: Section, 4 columns: small Image (icon SVG) + Text each -->
 <div class="svc">
   <div class="wrap svc-in">
-    <div class="svc-item"><svg viewBox="0 0 26 26" fill="none" stroke-width="1.2"><path d="M13 3v6M10 6h6"/><rect x="5" y="10" width="16" height="13" rx="2"/><path d="M9 16h8"/></svg><div><b>Doctor-formulated</b><span>Designed by an MD, PhD</span></div></div>
-    <div class="svc-item"><svg viewBox="0 0 26 26" fill="none" stroke-width="1.2"><path d="M2 7h13v11H2zM15 11h5l4 4v3h-9z"/><circle cx="7" cy="19.5" r="2"/><circle cx="19" cy="19.5" r="2"/></svg><div><b>Free shipping over A$80</b><span>Australia-wide</span></div></div>
-    <div class="svc-item"><svg viewBox="0 0 26 26" fill="none" stroke-width="1.2"><rect x="3" y="6" width="20" height="14" rx="2"/><path d="M3 10h20M7 16h4"/></svg><div><b>Pay in 4 with Afterpay</b><span>Interest-free</span></div></div>
-    <div class="svc-item"><svg viewBox="0 0 26 26" fill="none" stroke-width="1.2"><path d="M13 3 4 6v6c0 5.5 3.8 9.6 9 11 5.2-1.4 9-5.5 9-11V6z"/><path d="m9 13 3 3 5-6"/></svg><div><b>Secure checkout</b><span>Visa, Mastercard, PayPal</span></div></div>
+    <div class="svc-item"><svg viewBox="0 0 26 26" fill="none" stroke-width="1.2"><path d="M13 3v6M10 6h6"/><rect x="5" y="10" width="16" height="13" rx="2"/><path d="M9 16h8"/></svg><div><b data-ed="Service bar | Text 1">Doctor-formulated</b><span data-ed="Service bar | Text 2">Designed by an MD, PhD</span></div></div>
+    <div class="svc-item"><svg viewBox="0 0 26 26" fill="none" stroke-width="1.2"><path d="M2 7h13v11H2zM15 11h5l4 4v3h-9z"/><circle cx="7" cy="19.5" r="2"/><circle cx="19" cy="19.5" r="2"/></svg><div><b data-ed="Service bar | Text 3">Free shipping over A$80</b><span data-ed="Service bar | Text 4">Australia-wide</span></div></div>
+    <div class="svc-item"><svg viewBox="0 0 26 26" fill="none" stroke-width="1.2"><rect x="3" y="6" width="20" height="14" rx="2"/><path d="M3 10h20M7 16h4"/></svg><div><b data-ed="Service bar | Text 5">Pay in 4 with Afterpay</b><span data-ed="Service bar | Text 6">Interest-free</span></div></div>
+    <div class="svc-item"><svg viewBox="0 0 26 26" fill="none" stroke-width="1.2"><path d="M13 3 4 6v6c0 5.5 3.8 9.6 9 11 5.2-1.4 9-5.5 9-11V6z"/><path d="m9 13 3 3 5-6"/></svg><div><b data-ed="Service bar | Text 7">Secure checkout</b><span data-ed="Service bar | Text 8">Visa, Mastercard, PayPal</span></div></div>
   </div>
 </div>
 
@@ -96,8 +96,8 @@
 <section class="sec" id="shop" data-sqs="bestsellers">
   <div class="wrap">
     <div class="head">
-      <div class="head-l"><h2 class="h2">Bestsellers</h2><p class="lede">The formulas customers come back for, led by Moisturiser for Men and Q10 Facial Oil.</p><p class="offer-note"><b>Buy more, save more.</b> Your first product is full price, then 10% off every additional product in your bag.</p></div>
-      <div class="arrows"><a class="ulink" href="shop.html?c=bestsellers" style="margin-right:20px">Shop all</a><button class="arrow" aria-label="Previous" data-rail="best" data-dir="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button><button class="arrow" aria-label="Next" data-rail="best" data-dir="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div>
+      <div class="head-l"><h2 data-ed="Bestsellers | Heading" class="h2">Bestsellers</h2><p data-ed="Bestsellers | Text 1" class="lede">The formulas customers come back for, led by Moisturiser for Men and Q10 Facial Oil.</p><p data-ed="Bestsellers | Text 2" class="offer-note"><b>Buy more, save more.</b> Your first product is full price, then 10% off every additional product in your bag.</p></div>
+      <div class="arrows"><a data-ed="Bestsellers | Button" class="ulink" href="shop.html?c=bestsellers" style="margin-right:20px">Shop all</a><button class="arrow" aria-label="Previous" data-rail="best" data-dir="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button><button class="arrow" aria-label="Next" data-rail="best" data-dir="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div>
     </div>
     <div class="rail" id="rail-best" data-products="best"></div>
     <div class="progress"><i id="prog-best"></i></div>
@@ -107,38 +107,38 @@
 <!-- SQS: Section full-bleed, 2 Image blocks (design "Overlay") side by side, each with heading + button -->
 <section class="split" data-sqs="collections">
   <a class="panel p-dark" href="shop.html?c=anti-ageing">
-    <img class="ph" src="https://images.unsplash.com/photo-1790574318908-d14c5e705570?auto=format&fit=crop&w=1400&q=80" alt="Smiling mature woman with healthy, radiant skin" loading="lazy" style="object-position:50% 25%">
-    <h2 class="h2">Anti-ageing</h2>
-    <p>Firm, smooth and hydrate. Formulas that support skin's own repair, for visible results with daily use.</p>
-    <span class="btn btn-light" style="align-self:flex-start">Shop anti-ageing</span>
+    <img data-ed-img="Feature panels | Image 1" class="ph" src="https://images.unsplash.com/photo-1790574318908-d14c5e705570?auto=format&fit=crop&w=1400&q=80" alt="Smiling mature woman with healthy, radiant skin" loading="lazy" style="object-position:50% 25%">
+    <h2 data-ed="Feature panels | Heading 1" class="h2">Anti-ageing</h2>
+    <p data-ed="Feature panels | Text 1">Firm, smooth and hydrate. Formulas that support skin's own repair, for visible results with daily use.</p>
+    <span data-ed="Feature panels | Button 1" class="btn btn-light" style="align-self:flex-start">Shop anti-ageing</span>
   </a>
   <a class="panel p-light" href="shop.html?c=acne">
-    <img class="ph" src="https://images.unsplash.com/photo-1581182800629-7d90925ad072?auto=format&fit=crop&w=1400&q=80" alt="Young woman with clear skin, eyes closed in soft sunlight" loading="lazy" style="object-position:50% 30%">
-    <h2 class="h2">Clear skin</h2>
-    <p>Calm breakouts, then fade the marks they leave. Gentle enough for daily use on acne-prone skin.</p>
-    <span class="btn btn-light" style="align-self:flex-start">Shop acne &amp; blemish</span>
+    <img data-ed-img="Feature panels | Image 2" class="ph" src="https://images.unsplash.com/photo-1581182800629-7d90925ad072?auto=format&fit=crop&w=1400&q=80" alt="Young woman with clear skin, eyes closed in soft sunlight" loading="lazy" style="object-position:50% 30%">
+    <h2 data-ed="Feature panels | Heading 2" class="h2">Clear skin</h2>
+    <p data-ed="Feature panels | Text 2">Calm breakouts, then fade the marks they leave. Gentle enough for daily use on acne-prone skin.</p>
+    <span data-ed="Feature panels | Button 2" class="btn btn-light" style="align-self:flex-start">Shop acne &amp; blemish</span>
   </a>
 </section>
 
 <!-- SQS: Section. 6 Text blocks with links in a grid (Fluid Engine), thin borders via Custom CSS -->
 <section class="sec" id="concerns" data-sqs="concerns">
   <div class="wrap">
-    <div class="head"><div class="head-l"><h2 class="h2">Shop by concern</h2><p class="lede">Tell us what you want to change. We'll show you what helps.</p></div></div>
+    <div class="head"><div class="head-l"><h2 data-ed="Shop by concern | Heading" class="h2">Shop by concern</h2><p data-ed="Shop by concern | Text 1" class="lede">Tell us what you want to change. We'll show you what helps.</p></div></div>
     <div class="concern-grid">
-      <a href="shop.html?k=lines"><strong>Fine lines &amp; wrinkles</strong><span>Collagel, Anti-Ageing Moisturising Cream<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
-      <a href="shop.html?k=eyes"><strong>Dark circles &amp; puffiness</strong><span>Pepteyes<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
-      <a href="shop.html?k=dry"><strong>Dryness &amp; dullness</strong><span>Q10 Facial Oil<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
-      <a href="shop.html?k=breakouts"><strong>Breakouts</strong><span>SansZit Anti-Acne Cream<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
-      <a href="shop.html?k=marks"><strong>Acne marks &amp; scars</strong><span>Scar Corrector Serum<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
-      <a href="shop.html?k=hair"><strong>Thinning hair</strong><span>Hair Grow System<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
+      <a href="shop.html?k=lines"><strong data-ed="Shop by concern | Text 2">Fine lines &amp; wrinkles</strong><span data-ed="Shop by concern | Text 3">Collagel, Anti-Ageing Moisturising Cream<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
+      <a href="shop.html?k=eyes"><strong data-ed="Shop by concern | Text 4">Dark circles &amp; puffiness</strong><span data-ed="Shop by concern | Text 5">Pepteyes<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
+      <a href="shop.html?k=dry"><strong data-ed="Shop by concern | Text 6">Dryness &amp; dullness</strong><span data-ed="Shop by concern | Text 7">Q10 Facial Oil<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
+      <a href="shop.html?k=breakouts"><strong data-ed="Shop by concern | Text 8">Breakouts</strong><span data-ed="Shop by concern | Text 9">SansZit Anti-Acne Cream<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
+      <a href="shop.html?k=marks"><strong data-ed="Shop by concern | Text 10">Acne marks &amp; scars</strong><span data-ed="Shop by concern | Text 11">Scar Corrector Serum<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
+      <a href="shop.html?k=hair"><strong data-ed="Shop by concern | Text 12">Thinning hair</strong><span data-ed="Shop by concern | Text 13">Hair Grow System<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
     </div>
   </div>
 </section>
 
 <!-- SQS: Section bg Deep Burgundy, full-bleed 2 cols: Image block | Text + Button. Quiz = Code Block (this modal) or a Squarespace Form that emails a routine -->
 <section class="quizb" data-sqs="quiz-banner">
-  <div class="quizb-img"><img src="https://images.unsplash.com/photo-1702312686957-572286d28e11?auto=format&fit=crop&w=1400&q=80" alt="Woman applying moisturiser, holding a jar of cream" loading="lazy"></div>
-  <div class="quizb-txt"><h2 class="h2">Not sure where to start?</h2><p class="lede">Answer two questions and get a routine matched to your skin. It takes under a minute.</p><button class="btn btn-red" onclick="openQuiz()">Take the skin quiz</button></div>
+  <div class="quizb-img"><img data-ed-img="Quiz banner | Image" src="https://images.unsplash.com/photo-1702312686957-572286d28e11?auto=format&fit=crop&w=1400&q=80" alt="Woman applying moisturiser, holding a jar of cream" loading="lazy"></div>
+  <div class="quizb-txt"><h2 data-ed="Quiz banner | Heading" class="h2">Not sure where to start?</h2><p data-ed="Quiz banner | Text" class="lede">Answer two questions and get a routine matched to your skin. It takes under a minute.</p><button data-ed="Quiz banner | Button" class="btn btn-red" onclick="openQuiz()">Take the skin quiz</button></div>
 </section>
 
 <!-- SQS: Section. Left Image block, right Text + Product Block (Collagel, "Add to cart" button style) + Accordion block -->
@@ -146,15 +146,15 @@
   <div class="wrap spot-in">
     <div class="spot-vis"><div class="light"></div><div class="pk" data-pk="airless" data-c="white" data-label="Collagel" data-id="collagel" data-img="collagel-5.webp" data-sub="Ultimate anti-aging gel" data-size="50 mL"></div></div>
     <div>
-      <p class="cap">Our signature formula</p>
-      <h2 class="h2">Collagel</h2>
-      <p class="lede">An age-defying gel that nourishes, firms and lifts, with deep hydration that skin feels straight away and sees over weeks.</p>
+      <p data-ed="Spotlight | Label" class="cap">Our signature formula</p>
+      <h2 data-ed="Spotlight | Heading" class="h2">Collagel</h2>
+      <p data-ed="Spotlight | Text 1" class="lede">An age-defying gel that nourishes, firms and lifts, with deep hydration that skin feels straight away and sees over weeks.</p>
       <div class="buy"><span class="pr">A$49.95<s>A$104.95</s></span><span class="sz">50 mL / 1.69 fl oz</span></div>
-      <div class="ctas" style="margin-bottom:40px"><button class="btn btn-dark" data-add="collagel">Add to bag</button><a class="ulink" href="product.html?p=collagel">View product</a></div>
+      <div class="ctas" style="margin-bottom:40px"><button data-ed="Spotlight | Button 1" class="btn btn-dark" data-add="collagel">Add to bag</button><a data-ed="Spotlight | Button 2" class="ulink" href="product.html?p=collagel">View product</a></div>
       <div class="acc">
-        <details open><summary>What it does<i></i></summary><div class="body"><ul><li>Nourishes and supports skin repair</li><li>Visibly reduces the look of wrinkles</li><li>Firms and lifts</li><li>Hydrates deeply without heaviness</li></ul></div></details>
-        <details><summary>How to use<i></i></summary><div class="body">Morning and night, smooth one to two pumps over clean face and neck. Follow with SPF in the morning.</div></details>
-        <details><summary>Ingredients<i></i></summary><div class="body">Full INCI list from the product pack goes here.</div></details>
+        <details open><summary data-ed="Spotlight | Title 1">What it does<i></i></summary><div class="body"><ul><li data-ed="Spotlight | Text 2">Nourishes and supports skin repair</li><li data-ed="Spotlight | Text 3">Visibly reduces the look of wrinkles</li><li data-ed="Spotlight | Text 4">Firms and lifts</li><li data-ed="Spotlight | Text 5">Hydrates deeply without heaviness</li></ul></div></details>
+        <details><summary data-ed="Spotlight | Title 2">How to use<i></i></summary><div data-ed="Spotlight | Text 6" class="body">Morning and night, smooth one to two pumps over clean face and neck. Follow with SPF in the morning.</div></details>
+        <details><summary data-ed="Spotlight | Title 3">Ingredients<i></i></summary><div data-ed="Spotlight | Text 7" class="body">Full INCI list from the product pack goes here.</div></details>
       </div>
     </div>
   </div>
@@ -163,12 +163,12 @@
 <!-- SQS: Section bg White. Image block (founder photo) + Quote block + Text + Button -->
 <section class="sec founder" id="founder" data-sqs="founder">
   <div class="wrap founder-in">
-    <div class="portrait"><p>Founder portrait<br>4:5, natural light</p></div>
+    <div data-ed-img="Founder | Image" class="portrait"><p>Founder portrait<br>4:5, natural light</p></div>
     <div>
-      <blockquote>“Beauty without health is temporary. Every ljörk formula begins with how skin actually ages.”</blockquote>
-      <div class="who"><div><strong>Dr Plinio R. Hurtado</strong><span>MD, FRACP(eq), PhD. Clinical immunologist, founder</span></div></div>
-      <p class="bio">A career spent researching inflammation, immunity and how cells age and repair led Dr Hurtado to one idea: look after the health of the skin, and its beauty follows.</p>
-      <a class="btn btn-ghost" href="about.html">Read our story</a>
+      <blockquote data-ed="Founder | Quote">“Beauty without health is temporary. Every ljörk formula begins with how skin actually ages.”</blockquote>
+      <div class="who"><div><strong data-ed="Founder | Text 1">Dr Plinio R. Hurtado</strong><span data-ed="Founder | Text 2">MD, FRACP(eq), PhD. Clinical immunologist, founder</span></div></div>
+      <p data-ed="Founder | Text 3" class="bio">A career spent researching inflammation, immunity and how cells age and repair led Dr Hurtado to one idea: look after the health of the skin, and its beauty follows.</p>
+      <a data-ed="Founder | Button" class="btn btn-ghost" href="about.html">Read our story</a>
     </div>
   </div>
 </section>
@@ -176,12 +176,12 @@
 <!-- SQS: Section. Text + 3 columns (Image icon + Text). Top rule + column dividers via Custom CSS -->
 <section class="sec" id="science" data-sqs="science">
   <div class="wrap">
-    <div class="head"><div class="head-l"><h2 class="h2">Formulated from skin biology</h2></div><a class="ulink" href="science.html">How we formulate</a></div>
-    <div class="sci-img"><img src="https://images.unsplash.com/photo-1787771206277-a73273485611?auto=format&fit=crop&w=2000&q=80" alt="Glass droppers holding clear and golden serums" loading="lazy"></div>
+    <div class="head"><div class="head-l"><h2 data-ed="Formulated from skin biology | Heading 1" class="h2">Formulated from skin biology</h2></div><a data-ed="Formulated from skin biology | Button" class="ulink" href="science.html">How we formulate</a></div>
+    <div class="sci-img"><img data-ed-img="Formulated from skin biology | Image" src="https://images.unsplash.com/photo-1787771206277-a73273485611?auto=format&fit=crop&w=2000&q=80" alt="Glass droppers holding clear and golden serums" loading="lazy"></div>
     <div class="pillars">
-      <div class="pillar"><svg viewBox="0 0 48 48" fill="none" stroke="#E30613" stroke-width="1.1"><rect x="4" y="10" width="40" height="7"/><rect x="4" y="21" width="40" height="7"/><rect x="4" y="32" width="40" height="7"/></svg><h3 class="h3">Barrier integrity</h3><p>A healthy barrier holds moisture in and keeps irritants out. We protect it first, so every active can work.</p></div>
-      <div class="pillar"><svg viewBox="0 0 48 48" fill="none" stroke="#E30613" stroke-width="1.1"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="6"/><path d="M24 1v6M24 41v6M1 24h6M41 24h6"/></svg><h3 class="h3">Cellular stress</h3><p>Pollution and UV put skin cells under daily stress. Our formulas help skin defend itself and recover.</p></div>
-      <div class="pillar"><svg viewBox="0 0 48 48" fill="none" stroke="#E30613" stroke-width="1.1"><path d="M3 31c7-12 12-12 21 0s14 12 21 0"/><path d="M3 20c7-12 12-12 21 0s14 12 21 0" opacity=".35"/></svg><h3 class="h3">Calm inflammation</h3><p>Low-grade inflammation quietly ages skin. Calming it sits at the centre of how ljörk works.</p></div>
+      <div class="pillar"><svg viewBox="0 0 48 48" fill="none" stroke="#E30613" stroke-width="1.1"><rect x="4" y="10" width="40" height="7"/><rect x="4" y="21" width="40" height="7"/><rect x="4" y="32" width="40" height="7"/></svg><h3 data-ed="Formulated from skin biology | Heading 2" class="h3">Barrier integrity</h3><p data-ed="Formulated from skin biology | Text 1">A healthy barrier holds moisture in and keeps irritants out. We protect it first, so every active can work.</p></div>
+      <div class="pillar"><svg viewBox="0 0 48 48" fill="none" stroke="#E30613" stroke-width="1.1"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="6"/><path d="M24 1v6M24 41v6M1 24h6M41 24h6"/></svg><h3 data-ed="Formulated from skin biology | Heading 3" class="h3">Cellular stress</h3><p data-ed="Formulated from skin biology | Text 2">Pollution and UV put skin cells under daily stress. Our formulas help skin defend itself and recover.</p></div>
+      <div class="pillar"><svg viewBox="0 0 48 48" fill="none" stroke="#E30613" stroke-width="1.1"><path d="M3 31c7-12 12-12 21 0s14 12 21 0"/><path d="M3 20c7-12 12-12 21 0s14 12 21 0" opacity=".35"/></svg><h3 data-ed="Formulated from skin biology | Heading 4" class="h3">Calm inflammation</h3><p data-ed="Formulated from skin biology | Text 3">Low-grade inflammation quietly ages skin. Calming it sits at the centre of how ljörk works.</p></div>
     </div>
   </div>
 </section>
@@ -189,17 +189,17 @@
 <!-- SQS: Section bg White. Tabs = Code Block, or two stacked rows with an Accordion -->
 <section class="sec ritual" data-sqs="ritual">
   <div class="wrap">
-    <div class="head"><div class="head-l"><h2 class="h2">Your daily ritual</h2></div>
+    <div class="head"><div class="head-l"><h2 data-ed="Your daily ritual | Heading 1" class="h2">Your daily ritual</h2></div>
       <div class="tabs" role="tablist"><button role="tab" aria-selected="true" onclick="tab(this,'am')">Morning</button><button role="tab" aria-selected="false" onclick="tab(this,'pm')">Evening</button></div></div>
     <div class="steps" id="am" style="grid-template-columns:repeat(3,1fr)">
-      <div class="step"><div class="step-img"><div class="pk" data-pk="airless" data-c="white" data-label="Collagel" data-id="collagel" data-sub="Ultimate anti-aging gel" data-size="50 mL"></div></div><span class="n">Step 1</span><h4>Treat</h4><p>Cleanse, then one to two pumps of Collagel over face and neck.</p><a class="ulink" href="product.html?p=collagel">Shop</a></div>
-      <div class="step"><div class="step-img"><div class="pk" data-pk="airless-s" data-c="white" data-label="Pepteyes" data-id="pepteyes" data-sub="Rejuvenating eye cream" data-size="30 mL"></div></div><span class="n">Step 2</span><h4>Eyes</h4><p>Tap a little Pepteyes along the orbital bone.</p><a class="ulink" href="product.html?p=pepteyes">Shop</a></div>
-      <div class="step"><div class="step-img"><div class="pk" data-pk="jar" data-c="burg" data-label="Face &amp; Neck" data-id="faceneck" data-sub="Moisturising cream"></div></div><span class="n">Step 3</span><h4>Moisturise</h4><p>Seal in hydration, then finish with SPF.</p><a class="ulink" href="product.html?p=faceneck">Shop</a></div>
+      <div class="step"><div class="step-img"><div class="pk" data-pk="airless" data-c="white" data-label="Collagel" data-id="collagel" data-sub="Ultimate anti-aging gel" data-size="50 mL"></div></div><span data-ed="Your daily ritual | Text 1" class="n">Step 1</span><h4 data-ed="Your daily ritual | Heading 2">Treat</h4><p data-ed="Your daily ritual | Text 2">Cleanse, then one to two pumps of Collagel over face and neck.</p><a data-ed="Your daily ritual | Button 1" class="ulink" href="product.html?p=collagel">Shop</a></div>
+      <div class="step"><div class="step-img"><div class="pk" data-pk="airless-s" data-c="white" data-label="Pepteyes" data-id="pepteyes" data-sub="Rejuvenating eye cream" data-size="30 mL"></div></div><span data-ed="Your daily ritual | Text 3" class="n">Step 2</span><h4 data-ed="Your daily ritual | Heading 3">Eyes</h4><p data-ed="Your daily ritual | Text 4">Tap a little Pepteyes along the orbital bone.</p><a data-ed="Your daily ritual | Button 2" class="ulink" href="product.html?p=pepteyes">Shop</a></div>
+      <div class="step"><div class="step-img"><div class="pk" data-pk="jar" data-c="burg" data-label="Face &amp; Neck" data-id="faceneck" data-sub="Moisturising cream"></div></div><span data-ed="Your daily ritual | Text 5" class="n">Step 3</span><h4 data-ed="Your daily ritual | Heading 4">Moisturise</h4><p data-ed="Your daily ritual | Text 6">Seal in hydration, then finish with SPF.</p><a data-ed="Your daily ritual | Button 3" class="ulink" href="product.html?p=faceneck">Shop</a></div>
     </div>
     <div class="steps" id="pm" hidden style="grid-template-columns:repeat(3,1fr)">
-      <div class="step"><div class="step-img"><div class="pk" data-pk="dropper" data-c="sage" data-label="Scar" data-id="scar" data-sub="Corrector serum"></div></div><span class="n">Step 1</span><h4>Correct</h4><p>After cleansing, Scar Corrector Serum on dark marks only.</p><a class="ulink" href="product.html?p=scar">Shop</a></div>
-      <div class="step"><div class="step-img"><div class="pk" data-pk="airless-s" data-c="white" data-label="Pepteyes" data-id="pepteyes" data-sub="Rejuvenating eye cream" data-size="30 mL"></div></div><span class="n">Step 2</span><h4>Eyes</h4><p>Pepteyes works overnight on lines and puffiness.</p><a class="ulink" href="product.html?p=pepteyes">Shop</a></div>
-      <div class="step"><div class="step-img"><div class="pk" data-pk="dropper" data-c="bronze" data-label="Q10" data-id="q10" data-sub="Facial oil"></div></div><span class="n">Step 3</span><h4>Nourish</h4><p>Press three drops of Q10 Facial Oil into skin.</p><a class="ulink" href="product.html?p=q10">Shop</a></div>
+      <div class="step"><div class="step-img"><div class="pk" data-pk="dropper" data-c="sage" data-label="Scar" data-id="scar" data-sub="Corrector serum"></div></div><span data-ed="Your daily ritual | Text 7" class="n">Step 1</span><h4 data-ed="Your daily ritual | Heading 5">Correct</h4><p data-ed="Your daily ritual | Text 8">After cleansing, Scar Corrector Serum on dark marks only.</p><a data-ed="Your daily ritual | Button 4" class="ulink" href="product.html?p=scar">Shop</a></div>
+      <div class="step"><div class="step-img"><div class="pk" data-pk="airless-s" data-c="white" data-label="Pepteyes" data-id="pepteyes" data-sub="Rejuvenating eye cream" data-size="30 mL"></div></div><span data-ed="Your daily ritual | Text 9" class="n">Step 2</span><h4 data-ed="Your daily ritual | Heading 6">Eyes</h4><p data-ed="Your daily ritual | Text 10">Pepteyes works overnight on lines and puffiness.</p><a data-ed="Your daily ritual | Button 5" class="ulink" href="product.html?p=pepteyes">Shop</a></div>
+      <div class="step"><div class="step-img"><div class="pk" data-pk="dropper" data-c="bronze" data-label="Q10" data-id="q10" data-sub="Facial oil"></div></div><span data-ed="Your daily ritual | Text 11" class="n">Step 3</span><h4 data-ed="Your daily ritual | Heading 7">Nourish</h4><p data-ed="Your daily ritual | Text 12">Press three drops of Q10 Facial Oil into skin.</p><a data-ed="Your daily ritual | Button 6" class="ulink" href="product.html?p=q10">Shop</a></div>
     </div>
     <div class="ritual-cta"><p id="ritualTotal">Morning ritual, 3 products</p><button class="btn btn-dark" id="ritualAdd" data-add-set="am">Add morning ritual to bag</button></div>
   </div>
@@ -209,8 +209,8 @@
 <section class="sec" data-sqs="blemish">
   <div class="wrap">
     <div class="head">
-      <div class="head-l"><h2 class="h2">Acne &amp; blemish</h2><p class="lede">Clear, calm and even out, without drying skin out.</p></div>
-      <div class="arrows"><a class="ulink" href="shop.html?c=acne" style="margin-right:20px">Shop all</a><button class="arrow" aria-label="Previous" data-rail="blem" data-dir="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button><button class="arrow" aria-label="Next" data-rail="blem" data-dir="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div>
+      <div class="head-l"><h2 data-ed="Acne &amp; blemish | Heading" class="h2">Acne &amp; blemish</h2><p data-ed="Acne &amp; blemish | Text" class="lede">Clear, calm and even out, without drying skin out.</p></div>
+      <div class="arrows"><a data-ed="Acne &amp; blemish | Button" class="ulink" href="shop.html?c=acne" style="margin-right:20px">Shop all</a><button class="arrow" aria-label="Previous" data-rail="blem" data-dir="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button><button class="arrow" aria-label="Next" data-rail="blem" data-dir="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div>
     </div>
     <div class="rail" id="rail-blem" data-products="blem"></div>
     <div class="progress"><i id="prog-blem"></i></div>
@@ -221,8 +221,8 @@
 <section class="sec review" style="padding-top:0" data-sqs="review">
   <div class="wrap">
     <div class="stars" aria-label="5 out of 5"><svg viewBox="0 0 20 20"><path d="m10 1.5 2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20"><path d="m10 1.5 2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20"><path d="m10 1.5 2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20"><path d="m10 1.5 2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20"><path d="m10 1.5 2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg></div>
-    <blockquote>A verified customer review goes here, ideally one that names a visible result and how long it took to see it.</blockquote>
-    <cite>First name, initial. Product reviewed</cite><br>
+    <blockquote data-ed="Review | Quote 1">A verified customer review goes here, ideally one that names a visible result and how long it took to see it.</blockquote>
+    <cite data-ed="Review | Quote 2">First name, initial. Product reviewed</cite><br>
     <span class="ph-note">Placeholder: replace with a real verified review</span>
   </div>
 </section>
@@ -230,11 +230,11 @@
 <!-- SQS: Summary Block (Grid, 3 cols, first item large) from Blog "all-about-your-skin" -->
 <section class="sec" id="journal" style="padding-top:0" data-sqs="journal">
   <div class="wrap">
-    <div class="head"><div class="head-l"><h2 class="h2">All about your skin</h2></div><a class="ulink" href="journal.html">Read the journal</a></div>
+    <div class="head"><div class="head-l"><h2 data-ed="All about your skin | Heading 1" class="h2">All about your skin</h2></div><a data-ed="All about your skin | Button" class="ulink" href="journal.html">Read the journal</a></div>
     <div class="journal">
-      <a class="post" href="article.html?a=0"><div class="post-img"><img src="https://images.unsplash.com/photo-1790574318874-8837efcfc519?auto=format&fit=crop&w=1200&q=80" alt="Close-up of mature skin" loading="lazy"></div><p class="meta">Ageing, 6 min read</p><h3>What actually happens to collagen as skin ages</h3><p>The biology behind fine lines, and what genuinely helps.</p></a>
-      <a class="post" href="article.html?a=1"><div class="post-img"><img src="https://images.unsplash.com/photo-1693004927824-f2623bbedc8b?auto=format&fit=crop&w=1200&q=80" alt="Woman applying cream to her cheek" loading="lazy"></div><p class="meta">Barrier, 4 min read</p><h3>Your skin barrier, explained by an immunologist</h3><p>Why it matters more than any single active.</p></a>
-      <a class="post" href="article.html?a=2"><div class="post-img"><img src="https://images.unsplash.com/photo-1728727267814-792db55ce678?auto=format&fit=crop&w=1200&q=80" alt="Smiling woman with spot treatment on her cheek" loading="lazy"></div><p class="meta">Blemish, 5 min read</p><h3>Acne marks or scars? How to treat each</h3><p>Pigment fades. Texture needs a different approach.</p></a>
+      <a class="post" href="article.html?a=0"><div class="post-img"><img data-ed-img="All about your skin | Image 1" src="https://images.unsplash.com/photo-1790574318874-8837efcfc519?auto=format&fit=crop&w=1200&q=80" alt="Close-up of mature skin" loading="lazy"></div><p data-ed="All about your skin | Label 1" class="meta">Ageing, 6 min read</p><h3 data-ed="All about your skin | Heading 2">What actually happens to collagen as skin ages</h3><p data-ed="All about your skin | Text 1">The biology behind fine lines, and what genuinely helps.</p></a>
+      <a class="post" href="article.html?a=1"><div class="post-img"><img data-ed-img="All about your skin | Image 2" src="https://images.unsplash.com/photo-1693004927824-f2623bbedc8b?auto=format&fit=crop&w=1200&q=80" alt="Woman applying cream to her cheek" loading="lazy"></div><p data-ed="All about your skin | Label 2" class="meta">Barrier, 4 min read</p><h3 data-ed="All about your skin | Heading 3">Your skin barrier, explained by an immunologist</h3><p data-ed="All about your skin | Text 2">Why it matters more than any single active.</p></a>
+      <a class="post" href="article.html?a=2"><div class="post-img"><img data-ed-img="All about your skin | Image 3" src="https://images.unsplash.com/photo-1728727267814-792db55ce678?auto=format&fit=crop&w=1200&q=80" alt="Smiling woman with spot treatment on her cheek" loading="lazy"></div><p data-ed="All about your skin | Label 3" class="meta">Blemish, 5 min read</p><h3 data-ed="All about your skin | Heading 4">Acne marks or scars? How to treat each</h3><p data-ed="All about your skin | Text 3">Pigment fades. Texture needs a different approach.</p></a>
     </div>
   </div>
 </section>
@@ -244,7 +244,7 @@
 <!-- SQS: Newsletter block (dark section) + Footer (Fluid Engine, 4 columns) -->
 <section class="join" id="join">
   <div class="wrap join-in">
-    <div><h2 class="h2">10% off your first order</h2><p class="lede">Join the ljörk list for new formulas, early access and skin advice from Dr Hurtado.</p></div>
+    <div><h2 data-ed="Newsletter | Heading" class="h2">10% off your first order</h2><p data-ed="Newsletter | Text" class="lede">Join the ljörk list for new formulas, early access and skin advice from Dr Hurtado.</p></div>
     <div>
       <form id="joinF"><label for="em" class="sr">Email address</label><input id="em" type="email" required placeholder="Your email address"><button type="submit">Subscribe</button></form>
       <p class="fine" id="joinMsg">Unsubscribe any time. See our privacy policy.</p>
