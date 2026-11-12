@@ -156,10 +156,10 @@
 </header>
 <main id="main">
 
-  <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><a href="shop.html">Shop</a><span class="sep">/</span><span id="crumb"></span></nav>
+  <nav class="wrap crumbs" aria-label="Breadcrumb"><a data-ed="Breadcrumbs | Text 1" href="index.html">Home</a><span class="sep">/</span><a data-ed="Breadcrumbs | Text 2" href="shop.html">Shop</a><span class="sep">/</span><span id="crumb"></span></nav>
 
   <section class="wrap pdp-in" id="pdp">
-    <div class="pdp-vis"><span class="pdp-badge" id="pBadge"></span><div class="pdp-pk" id="pPk"></div><span class="pdp-note">Illustrative packshot. Replace with product photography.</span></div>
+    <div class="pdp-vis"><span class="pdp-badge" id="pBadge"></span><div class="pdp-pk" id="pPk"></div><span data-ed="Section 2 | Text 1" class="pdp-note">Illustrative packshot. Replace with product photography.</span></div>
     <div class="pdp-info">
       <p class="cap" id="pCat"></p>
       <h1 class="h2" id="pName"></h1>
@@ -168,26 +168,26 @@
       <div class="pdp-price"><span id="pPrice"></span><s id="pWas"></s><em id="pSave"></em></div>
       <p class="lede" id="pDesc"></p>
 
-      <div class="offer" id="pOffer"><b>Buy more, save more</b>Your first product is full price, then <strong>10% off every additional product</strong> in your bag. Mix and match across the range.</div>
+      <div data-ed="Section 2 | Text 2" class="offer" id="pOffer"><b>Buy more, save more</b>Your first product is full price, then <strong>10% off every additional product</strong> in your bag. Mix and match across the range.</div>
 
-      <div class="qrow"><label for="qty">Quantity</label>
+      <div class="qrow"><label data-ed="Section 2 | Text 3" for="qty">Quantity</label>
         <div class="qty"><button id="minus" type="button" aria-label="Decrease quantity">&minus;</button><output id="qty" aria-live="polite">1</output><button id="plus" type="button" aria-label="Increase quantity">+</button></div>
       </div>
 
       <div class="sum" id="pSum">
-        <div class="row"><span>Subtotal</span><span id="sSub"></span></div>
-        <div class="row sv" id="sDiscRow" hidden><span>Additional-item discount (10%)</span><span id="sDisc"></span></div>
-        <div class="row tot"><span>Total</span><span id="sTot"></span></div>
+        <div class="row"><span data-ed="Section 2 | Text 4">Subtotal</span><span id="sSub"></span></div>
+        <div class="row sv" id="sDiscRow" hidden><span data-ed="Section 2 | Text 5">Additional-item discount (10%)</span><span id="sDisc"></span></div>
+        <div class="row tot"><span data-ed="Section 2 | Text 6">Total</span><span id="sTot"></span></div>
         <p class="msg" id="sMsg"></p>
       </div>
 
       <button class="btn btn-dark" id="pAdd" type="button"></button>
-      <p class="pay">Free shipping over A$80 &middot; Pay in 4 with Afterpay</p>
+      <p data-ed="Section 2 | Text 7" class="pay">Free shipping over A$80 &middot; Pay in 4 with Afterpay</p>
 
       <div class="acc">
-        <details open><summary>About this product</summary><p id="aAbout"></p></details>
-        <details><summary>How to use</summary><p id="aUse"></p></details>
-        <details><summary>Shipping &amp; returns</summary><p>Complimentary shipping across Australia on orders over A$80. Orders are discounted before shipping is calculated. See our shipping and returns page for full details.</p></details>
+        <details open><summary data-ed="Section 2 | Title 1">About this product</summary><p id="aAbout"></p></details>
+        <details><summary data-ed="Section 2 | Title 2">How to use</summary><p id="aUse"></p></details>
+        <details><summary data-ed="Section 2 | Title 3">Shipping &amp; returns</summary><p data-ed="Section 2 | Text 8">Complimentary shipping across Australia on orders over A$80. Orders are discounted before shipping is calculated. See our shipping and returns page for full details.</p></details>
       </div>
     </div>
   </section>
@@ -228,7 +228,7 @@
 
   <section class="pdp-more" aria-labelledby="moreT">
     <div class="wrap">
-      <div class="head"><div class="head-l"><h2 class="h2" id="moreT">Complete your routine</h2><p class="lede">Add any of these to your bag and save 10% on every additional product.</p></div></div>
+      <div class="head"><div class="head-l"><h2 class="h2" id="moreT">Complete your routine</h2><p data-ed="Complete your routine | Text" class="lede">Add any of these to your bag and save 10% on every additional product.</p></div></div>
       <div class="rail" id="rail-more"></div>
     </div>
   </section>
@@ -240,7 +240,7 @@
 
 <section class="join" id="join">
   <div class="wrap join-in">
-    <div><h2 class="h2">10% off your first order</h2><p class="lede">Join the ljörk list for new formulas, early access and skin advice from Dr Hurtado.</p></div>
+    <div><h2 data-ed="Newsletter | Heading" class="h2">10% off your first order</h2><p data-ed="Newsletter | Text" class="lede">Join the ljörk list for new formulas, early access and skin advice from Dr Hurtado.</p></div>
     <div>
       <form id="joinF"><label for="em" class="sr">Email address</label><input id="em" type="email" required placeholder="Your email address"><button type="submit">Subscribe</button></form>
       <p class="fine" id="joinMsg">Unsubscribe any time. See our privacy policy.</p>
